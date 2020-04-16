@@ -5,9 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,16 +18,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d("LifeCycle","onCreate called");
-        txtTG = findViewById(R.id.txtTG);
-        SimpleDateFormat spf = new SimpleDateFormat("HH:mm:ss");
-        String strDate = spf.format(new Date());
-        txtTG.setText(strDate);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         Log.d("LifeCycle","onResume called");
+        txtTG = findViewById(R.id.txtTG);
+        SimpleDateFormat spf = new SimpleDateFormat("HH:mm:ss");
+        String strDate = spf.format(new Date());
+        txtTG.setText(strDate);
+        Toast.makeText(getApplicationContext(),"Test AndroidToast",Toast.LENGTH_SHORT).show();
     }
 
     @Override
