@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d("LifeCycle","onCreate called");
+        Toast.makeText(getApplicationContext(),"Test AndroidToast",Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -28,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         SimpleDateFormat spf = new SimpleDateFormat("HH:mm:ss");
         String strDate = spf.format(new Date());
         txtTG.setText(strDate);
-        Toast.makeText(getApplicationContext(),"Test AndroidToast",Toast.LENGTH_SHORT).show();
     }
 
     @Override
